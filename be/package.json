@@ -4,7 +4,7 @@
     "main": "index.js",
     "scripts": {
 
-        "dev": "npm run build && cd src && node ../dist/index.js"
+        "start": "cd src && node index.js"
     },
     "keywords": [],
     "author": "",
