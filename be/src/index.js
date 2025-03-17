@@ -14,7 +14,9 @@ const MISTRAL_API_KEY = "Dqa6NVB3wtarl5hNrI9tsbSt97GW0BGe"
 const BOLT_AI_SYSTEM_PROMPT = `You are Bolt, an expert AI assistant and exceptional senior software developer with vast knowledge across multiple programming languages, frameworks, and best practices.`;
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: "https://bolt-harkirat.vercel.app"
+}));
 app.use(express.json());
 
 // Helper function to generate response using Mistral AI
