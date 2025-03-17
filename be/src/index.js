@@ -19,6 +19,13 @@ app.use(cors({
 }));
 app.use(express.json());
 
+app.use((req, res, next) => {
+    res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+    res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
+    next();
+});
+
+
 // Helper function to generate response using Mistral AI
 const generateMistralResponse = async(messages, maxTokens = 12000, systemPrompt = BOLT_AI_SYSTEM_PROMPT) => {
     try {
